@@ -37,7 +37,7 @@ function populateCityWeather(city, citySearchList) {
     url: queryURL,
     method: "GET",
   })
-    // store all of the retrieved data inside of an object
+    // Store data inside object
     .then(function (weather) {
       console.log(queryURL);
 
@@ -80,7 +80,7 @@ function populateCityWeather(city, citySearchList) {
         url: queryURL3,
         method: "GET",
 
-        // store retrieved data inside of an object
+        // Display uvIndex inside button
       }).then(function (uvIndex) {
         console.log(uvIndex);
 
@@ -103,14 +103,12 @@ function populateCityWeather(city, citySearchList) {
         $.ajax({
           url: queryURL2,
           method: "GET",
-
-          // store data
         }).then(function (forecast) {
           console.log(queryURL2);
 
           console.log(forecast);
 
-          // loop through the forecast list array and display on page
+          // for loop for forecast array to be displayed
           for (var i = 6; i < forecast.list.length; i += 8) {
             var forecastDate = $("<h5>");
 
@@ -153,6 +151,7 @@ function populateCityWeather(city, citySearchList) {
     });
 }
 
+// Local storage for list of past city searches
 $(document).ready(function () {
   var citySearchListStringified = localStorage.getItem("citySearchList");
 
@@ -171,8 +170,8 @@ $(document).ready(function () {
     event.preventDefault();
     var city = $("#city-input").val().trim().toLowerCase();
 
+    // Checks if search field is filled
     if (city != "") {
-      // check if any text has been entered
       citySearchList[city] = true;
       localStorage.setItem("citySearchList", JSON.stringify(citySearchList));
 
