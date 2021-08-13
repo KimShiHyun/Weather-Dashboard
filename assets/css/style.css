@@ -17,7 +17,7 @@ input {
   width: 22rem;
 }
 
-#city-date-icon,
+#city-date,
 #city-name,
 #current-icon {
   display: flex;
@@ -33,7 +33,7 @@ h4 {
   margin: 5px;
 }
 
-#forecast-cards {
+#forecast-card {
   display: flex;
   flex-direction: row;
   justify-content: center/space-between;
